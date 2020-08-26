@@ -7,9 +7,12 @@ function App() {
     <Router>
       <div className="app">
         <Switch>
-          <Route exact path="/checkout" component={Header} />
+          <Route exact path="/checkout" render={() => <h1>Checkout</h1>} />
           <Route exact path="/login" render={() => <h1>Login</h1>} />
-          <Route exact path="/" render={() => <Header />} />
+          <Route exact path="/">
+            <Header />
+            <h1>Home page</h1>
+          </Route>
         </Switch>
       </div>
     </Router>
