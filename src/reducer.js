@@ -1,7 +1,17 @@
 // the data layer logic
 
 export const initialState = {
-  basket: [],
+  basket: [
+    {
+      id: "0",
+      title:
+        "Racing Style Office Chair with Removable Headrest and High Back Cushion - Red",
+      price: 99.99,
+      rating: 4,
+      image:
+        "https://m.media-amazon.com/images/I/61JUe6eJUZL._AC_UL480_FMwebp_QL65_.jpg",
+    },
+  ],
 };
 
 const reducer = (state, action) => {
@@ -15,7 +25,23 @@ const reducer = (state, action) => {
       };
     case "REMOVE_FROM_BASKET":
       //lOGIC TO REMOVE ITEM FROM BASKET
-      return { state };
+
+      let newBasket = [...state.basket];
+
+      const index = state.basket.findIndex(
+        (basketItem) => basketItem.id === action.id
+      );
+
+      console.log("index", index);
+
+      if (index >= 0) {
+        newBasket.splice(index, 1);
+      } else {
+        console.warn(
+          `Cant remove product (id: ${action.id}) as its not in the basket`
+        );
+      }
+      return { ...state, basket: newBasket };
     default:
       return state;
   }
