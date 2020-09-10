@@ -6,7 +6,7 @@ import "./Checkout.css";
 import { useStateValue } from "../../StateProvider";
 
 const Checkout = () => {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket }] = useStateValue();
   return (
     <>
       <Header />
