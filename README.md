@@ -1,4 +1,5 @@
 Amazon clone in ReactJS with user authentication and cart functionality using react context api.
+
 Demo : https://benardcharumbira.github.io/amazon-clone/.
 
 ## Available Scripts
