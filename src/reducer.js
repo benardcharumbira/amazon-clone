@@ -1,17 +1,7 @@
 // the data layer logic
 
 export const initialState = {
-  basket: [
-    {
-      id: "0",
-      title:
-        "Racing Style Office Chair with Removable Headrest and High Back Cushion - Red",
-      price: 99.99,
-      rating: 4,
-      image:
-        "https://m.media-amazon.com/images/I/61JUe6eJUZL._AC_UL480_FMwebp_QL65_.jpg",
-    },
-  ],
+  basket: [],
   user: null,
 };
 
@@ -20,6 +10,11 @@ export const getBasketTotal = (basket) =>
 
 const reducer = (state, action) => {
   switch (action.type) {
+    case "SET_USER":
+      return {
+        ...state,
+        user: action.user,
+      };
     case "ADD_TO_BASKET":
       //lOGIC TO ADD ITEM TO BASKET
       return {
